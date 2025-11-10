@@ -1,4 +1,4 @@
-# Projeto Redação+ – Método Amarelo
+# Projeto Redação+ 
 
 Este repositório contém uma versão modularizada da landing page do **Redação+**, construída com React e Tailwind CSS, seguindo as diretrizes do **Guia Método Amarelo**. O código foi organizado em pequenos componentes reutilizáveis e todos os nomes de variáveis e funções estão em português quando possível, conforme recomendado no guia.
 
