@@ -22,23 +22,30 @@
 - `CartaoPlano.tsx`: Planos de assinatura
 - `PerguntaFrequente.tsx`: FAQ expansível
 
-## Cores
+## Tokens de cor
 
-### Principais
-- Primária: `#2563eb` (CTAs, links)
-- Secundária: `#8c734e` (elementos decorativos)
-- Fundo claro: `#F7F3E8` (bege)
-- Fundo escuro: `#1f2937` (rodapé)
+Os valores abaixo estão definidos em `src/index.css` como variáveis CSS e são a referência oficial para futuras telas.
 
-### Texto
-- Primária: `#111827`
-- Secundária: `#4b5563`
-- Clara: `#f3f4f6`
+| Token | Valor | Uso atual |
+| --- | --- | --- |
+| `--cor-primaria` | `#2563eb` | CTAs ativos, links e destaques informativos |
+| `--cor-primaria-hover` | `#1d4ed8` | Hover em CTAs ativos |
+| `--cor-secundaria` | `#8c734e` | Detalhes terrosos, badges de plano, elementos do rodapé |
+| `--cor-secundaria-hover` | `#71593b` | Hover em elementos secundários |
+| `--cor-fundo-claro` | `#F7F3E8` | Textura do rodapé e áreas terrosas |
+| `--cor-fundo-escuro` | `#1f2937` | Texto invertido e planos futuros com fundo escuro |
+| `--cor-texto-primaria` | `#111827` | Títulos e copy principal |
+| `--cor-texto-secundaria` | `#4b5563` | Parágrafos, microtextos |
+| `--cor-texto-clara` | `#f3f4f6` | Textos sobre fundo escuro |
+| `--cor-placeholder` | `#9ca3af` | Estados “em breve”, botões sem fluxo ativo |
+| `--cor-placeholder-hover` | `#6b7280` | Referência futura para interação em placeholders |
+| `--cor-acento` | `#8c734e` | Mantido para compatibilidade e uso manual |
 
-### Estados
-- Placeholder: `#9ca3af`
-- Hover primário: `#1d4ed8`
-- Hover secundário: `#71593b`
+### Combinações sob observação
+
+- `text-gray-600` sobre `bg-gray-50` (cards de planos): manter monitorado e escurecer levemente se o texto ficar pequeno.
+- `text-blue-100` sobre `bg-blue-600` (CTA final): se adicionarmos mais conteúdo, reforçar contraste com `text-blue-50` ou similar.
+- `text-[#4A4A4A]` sobre `#F7F3E8` (rodapé): contraste ok para parágrafos médios, mas revisar se houver textos menores.
 
 ## Tipografia
 
@@ -67,28 +74,32 @@
 - Área mínima de toque: 44x44px
 - Respeitar `prefers-reduced-motion`
 
-### Placeholders
-- Indicar estados "em breve" visualmente e via texto
-- Manter feedback claro sobre funcionalidades futuras
+### Placeholders e fluxos futuros
+- Botões sem fluxo ativo devem usar `isPlaceholder` no componente `Botao`, exibindo o rótulo “em breve/fluxo em preparação”.
+- Nas seções de planos, manter microtexto explicando o que ocorrerá quando o fluxo for publicado (cadastro → pagamento → acesso).
+- Links de documentos legais e itens de menu sem destino definitivo precisam sinalizar “em construção” ou “em finalização”.
 
 ## Evolução Futura
 
 ### Prioridades
-1. Unificação de tokens de cor no Tailwind
-2. Implementação de reduced motion
-3. Revisão de contrastes em textos pequenos
-4. Padronização de feedback em placeholders
-5. Aproximação estética: alinhar hero e cartões de plano com o rodapé (serifa em títulos, acentos terrosos, pequenas marcas decorativas)
+1. Mapear classes Tailwind para tokens em arquivo central (sem alterar estrutura atual).
+2. Ajustar contraste dos cenários listados acima conforme evoluírem.
+3. Manter hero e CTA finais com toques terrosos (bordas, tipografia) para aproximar visualmente do rodapé.
+4. Reforçar consistência de microtextos explicando placeholders em todas as telas.
 
 ### Regras
-- Novas animações devem respeitar preferências de movimento
-- Estados de hover não podem depender apenas de cor
-- Manter honestidade em promessas de funcionalidades
+- Novas animações devem respeitar `prefers-reduced-motion`.
+- Estados de hover não podem depender apenas de cor.
+- Mensagens de segurança e legais devem deixar claro quando algo estiver “em preparação” ou “em finalização”.
 
-## Notas de ajuste visual (implementado)
+## Acessibilidade e navegação (backlog imediato)
 
-- H1 do hero alterado para usar `font-serif` (Lora) para trazer tom literário.
-- Pequena barra decorativa em `topo` com cor `--cor-secundaria` para reforçar a identidade.
-- `CartaoPlano` usa agora `text-secundaria` e `bg-secundaria` em badges/destaques para reduzir o choque visual entre topo e rodapé.
+- **Menu mobile**: comportamento de foco já mapeado em `App.tsx`. Manter requisito para novas iterações (abrir → foco no primeiro link, fechar → foco volta ao acionador).
+- **Horas úteis (tooltip)**: texto associado via `aria-describedby` em `CartaoPlano`. Garantir que alterações futuras mantenham associação e sejam acessíveis por teclado.
+- **Preferência por menos movimento**: qualquer animação nova deve ter fallback estático ou ser desativada quando `prefers-reduced-motion` estiver ativo.
+- **Ícones sociais**: `aria-label` presente. Estados futuros (hover, focus) precisam de variações adicionais além de cor.
 
-Essas alterações são sutis e visam aproximar a linguagem visual já presente no rodapé — sem pesar a interface ou alterar a estrutura de conteúdo.
+## Direção visual
+
+- Hero, seções de conteúdo e rodapé devem compartilhar o clima “brasileiro, humano e literário”. Use tipografia serifada para títulos-chave e detalhes em `--cor-secundaria`.
+- Para novos componentes, considere texturas leves ou microdetalhes que remetam ao papel artesanal do rodapé, sem sobrecarregar o layout.
