@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import Botao from './ui/Botao';
 import { juntarClasses } from '../utils/juntarClasses';
 
@@ -20,7 +19,7 @@ const textoHorasUteis =
   'Horas úteis: horas contabilizadas dentro do nosso horário de atendimento, de segunda a sábado, das 9h às 18h. O prazo começa a contar a partir da confirmação de envio da redação';
 
 const textoFluxoAtivacao =
-  'Em breve: Ao assinar, você poderá criar sua conta, escolher a forma de pagamento e ter acesso imediato à plataforma após a confirmação.';
+  'Fluxo em preparação: quando liberar, você fará cadastro rápido, confirmará o pagamento com o parceiro escolhido e terá acesso ao painel em poucos minutos.';
 
 /**
  * Cartão de plano com destaque opcional e nota explicativa sobre horas úteis.
@@ -98,7 +97,7 @@ export default function CartaoPlano({ plano }: CartaoPlanoProps) {
             tamanho="lg"
             largura="cheio"
             isPlaceholder
-            placeholderText="em breve"
+            placeholderText="fluxo em preparação"
             aria-label={`Assinar plano ${plano.nome}`}
             aria-describedby={`fluxo-ativacao-${plano.nome}`}
           >

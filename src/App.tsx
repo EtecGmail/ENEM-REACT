@@ -113,7 +113,7 @@ export default function App() {
     {
       pergunta: 'Minhas redações e dados são protegidos?',
       resposta:
-        'Sim. Utilizamos conexão segura (HTTPS), controle de acesso apenas para sua conta e equipe pedagógica, e práticas alinhadas à LGPD. Você pode solicitar alteração ou remoção dos dados conforme a lei.',
+        'Estamos finalizando a camada completa de segurança: a versão pública terá conexão segura (HTTPS), controle de acesso apenas para sua conta e equipe pedagógica, além de fluxos alinhados à LGPD. Já prevemos opções para solicitar alteração ou remoção de dados conforme a lei.',
     },
     {
       pergunta: 'Posso cancelar quando quiser?',
@@ -192,9 +192,12 @@ export default function App() {
               <li>
                 <a
                   href="#cta-final"
-                  className="font-semibold text-blue-600 hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                  className="font-semibold text-blue-600 hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded inline-flex items-center gap-2"
                 >
                   Área do aluno
+                  <span className="text-xs font-medium uppercase tracking-wide text-gray-500">
+                    em breve
+                  </span>
                 </a>
               </li>
             </ul>
@@ -210,7 +213,11 @@ export default function App() {
                     { href: '#como-funciona', rotulo: 'Como funciona' },
                     { href: '#planos', rotulo: 'Planos' },
                     { href: '#faq', rotulo: 'Perguntas' },
-                    { href: '#cta-final', rotulo: 'Entrar / Começar' },
+                    {
+                      href: '#cta-final',
+                      rotulo: 'Entrar / Começar',
+                      indicador: 'em breve',
+                    },
                   ].map((item, index) => (
                     <li key={item.href}>
                       <a
@@ -219,7 +226,14 @@ export default function App() {
                         className="block font-medium hover:text-blue-600 transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
                         onClick={() => definirMenuAberto(false)}
                       >
-                        {item.rotulo}
+                        <span className="flex items-center gap-2">
+                          {item.rotulo}
+                          {item.indicador ? (
+                            <span className="text-xs uppercase tracking-wide text-gray-500">
+                              {item.indicador}
+                            </span>
+                          ) : null}
+                        </span>
                       </a>
                     </li>
                   ))}
@@ -243,7 +257,7 @@ export default function App() {
             const el = document.getElementById('planos');
             el?.scrollIntoView({ behavior: 'smooth' });
           }}>
-            Ver planos
+            Ver planos nesta página
           </Botao>
           <p className="mt-6 text-gray-600 text-sm">
             Sem fidelidade obrigatória • Cancelamento simples direto na plataforma
@@ -321,16 +335,21 @@ export default function App() {
           Método claro, correção humanizada, critérios oficiais e acompanhamento contínuo. Sem
           fórmulas mágicas, com trabalho sério.
         </p>
-        <Botao
-          variante="primario"
-          tamanho="lg"
-          onClick={() => {
-            const el = document.getElementById('planos');
-            el?.scrollIntoView({ behavior: 'smooth' });
-          }}
-        >
-          Começar agora
-        </Botao>
+        <div className="flex flex-col items-center gap-4">
+          <Botao
+            variante="primario"
+            tamanho="lg"
+            onClick={() => {
+              const el = document.getElementById('planos');
+              el?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
+            Conferir planos e novidades
+          </Botao>
+          <p className="text-blue-100 text-sm max-w-xl">
+            Fluxo de assinatura em preparação: avisaremos aqui quando o cadastro com pagamento estiver ativo.
+          </p>
+        </div>
       </Secao>
       {/* Rodapé */}
       <RodapeRaizesLingua />

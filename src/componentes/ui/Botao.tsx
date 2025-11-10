@@ -3,7 +3,7 @@ import type { ButtonHTMLAttributes, ReactNode } from 'react';
 
 // Variantes do botão definidas via cva para reutilização
 const estilosBotao = cva(
-  'inline-flex items-center justify-center rounded-xl font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 gap-2',
+  'inline-flex items-center justify-center rounded-xl font-semibold transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 gap-2 px-6 py-3',
   {
     variants: {
       variante: {
@@ -12,11 +12,11 @@ const estilosBotao = cva(
         neutro:
           'bg-gray-100 text-gray-900 hover:bg-gray-200 focus-visible:ring-blue-500',
         placeholder:
-          'bg-gray-300 text-gray-600 cursor-not-allowed hover:bg-gray-300',
+          'bg-gray-200 text-gray-600 cursor-not-allowed shadow-none focus-visible:ring-gray-400 focus-visible:ring-offset-white',
       },
       tamanho: {
-        md: 'px-6 py-3 text-base',
-        lg: 'px-8 py-4 text-lg',
+        md: 'text-base',
+        lg: 'text-lg py-4 px-8',
       },
       largura: {
         cheio: 'w-full',
@@ -56,15 +56,45 @@ export default function Botao({
   type = 'button',
   isPlaceholder = false,
   placeholderText,
+  title,
   ...props
 }: BotaoProps) {
+  const resolvedVariant = isPlaceholder ? 'placeholder' : variante;
+  const classes = [
+    estilosBotao({
+      variante: resolvedVariant,
+      tamanho,
+      largura,
+      placeholder: isPlaceholder,
+    }),
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const indicadorPlaceholder = isPlaceholder ? placeholderText ?? 'em breve' : null;
+
   return (
     <button
       type={type}
-      className={estilosBotao({ variante, tamanho, largura, className })}
+      className={classes}
+      data-placeholder={isPlaceholder ? 'true' : undefined}
+      aria-disabled={isPlaceholder || undefined}
+      title={
+        isPlaceholder && indicadorPlaceholder
+          ? `Fluxo indisponível: ${indicadorPlaceholder}`
+          : title
+      }
       {...props}
     >
-      {children}
+      <span className="flex flex-col items-center gap-1 leading-none">
+        <span className="flex items-center gap-2">{children}</span>
+        {indicadorPlaceholder ? (
+          <span className="text-[11px] uppercase tracking-wide font-medium text-gray-600">
+            {indicadorPlaceholder}
+          </span>
+        ) : null}
+      </span>
     </button>
   );
 }

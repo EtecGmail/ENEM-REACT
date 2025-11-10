@@ -23,18 +23,49 @@ export default function RodapeRaizesLingua() {
           <div>
             <h4 className="font-serif text-xl mb-4">A Plataforma</h4>
             <ul className="space-y-2">
-              <li><a href="/sobre" className="link-manuscrito">Sobre</a></li>
-              <li><a href="/faq" className="link-manuscrito">FAQ</a></li>
-              <li><a href="/cursos" className="link-manuscrito">Cursos</a></li>
-              <li><a href="/blog" className="link-manuscrito">Blog</a></li>
+              <li>
+                <a href="/sobre" className="link-manuscrito" aria-disabled="true">
+                  Sobre <span className="text-xs uppercase tracking-wide text-[#8c734e]">em construção</span>
+                </a>
+              </li>
+              <li>
+                <a href="/faq" className="link-manuscrito" aria-disabled="true">
+                  FAQ <span className="text-xs uppercase tracking-wide text-[#8c734e]">em construção</span>
+                </a>
+              </li>
+              <li>
+                <a href="/cursos" className="link-manuscrito" aria-disabled="true">
+                  Cursos <span className="text-xs uppercase tracking-wide text-[#8c734e]">em construção</span>
+                </a>
+              </li>
+              <li>
+                <a href="/blog" className="link-manuscrito" aria-disabled="true">
+                  Blog <span className="text-xs uppercase tracking-wide text-[#8c734e]">em construção</span>
+                </a>
+              </li>
             </ul>
           </div>
           <div>
             <h4 className="font-serif text-xl mb-4">Caminhos da Língua</h4>
             <ul className="space-y-2">
-                    <li><a href="#" className="link-manuscrito">Placeholder</a></li>
-                    <li><a href="#" className="link-manuscrito">Placeholder</a></li>
-                    <li><a href="#" className="link-manuscrito">Placeholder</a></li>
+              <li>
+                <span className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]">
+                  Trilhas de leitura
+                  <span className="text-xs uppercase tracking-wide text-[#8c734e]">em breve</span>
+                </span>
+              </li>
+              <li>
+                <span className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]">
+                  Comunidade de revisores
+                  <span className="text-xs uppercase tracking-wide text-[#8c734e]">em breve</span>
+                </span>
+              </li>
+              <li>
+                <span className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]">
+                  Agenda de temas
+                  <span className="text-xs uppercase tracking-wide text-[#8c734e]">em breve</span>
+                </span>
+              </li>
             </ul>
           </div>
           <div>
@@ -110,8 +141,14 @@ export default function RodapeRaizesLingua() {
         {/* Faixa legal */}
         <div className="mt-8 pt-4 border-t border-[#6B8E23] text-sm flex flex-col lg:flex-row justify-between items-center">
           <div className="flex space-x-4 mb-2 lg:mb-0">
-            <a href="/privacidade" className="link-manuscrito">Política de Privacidade</a>
-            <a href="/termos" className="link-manuscrito">Termos de Uso</a>
+            <a href="/privacidade" className="link-manuscrito" aria-disabled="true">
+              Política de Privacidade
+              <span className="ml-2 text-xs uppercase tracking-wide text-[#8c734e]">em finalização</span>
+            </a>
+            <a href="/termos" className="link-manuscrito" aria-disabled="true">
+              Termos de Uso
+              <span className="ml-2 text-xs uppercase tracking-wide text-[#8c734e]">em finalização</span>
+            </a>
           </div>
           <p>
             © {anoAtual} Nome da Plataforma. Feito com amor pela Língua Portuguesa.
