@@ -1,0 +1,36 @@
+/* Estilos específicos para o rodapé "Raízes da Língua" */
+
+/* Sub-linhado manual para links - traço desenhado aos poucos no hover */
+.link-manuscrito {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+/* Utiliza a cor de acento definida nas variáveis CSS. O sublinhado se anima
+   suavemente quando o link é focado ou recebe hover, simulando um traço
+   manuscrito. */
+.link-manuscrito::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0;
+  background-color: var(--cor-acento);
+  transition: width 0.3s ease-in-out;
+}
+
+.link-manuscrito:hover::after,
+.link-manuscrito:focus::after {
+  width: 100%;
+}
+
+/* Respeita preferências de movimento reduzido: desativa a transição do
+   sublinhado para usuários que solicitarem menos animações. */
+@media (prefers-reduced-motion: reduce) {
+  .link-manuscrito::after {
+    transition: none;
+  }
+}

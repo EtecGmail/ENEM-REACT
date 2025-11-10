@@ -1,0 +1,51 @@
+/* Importa as fontes Lora (serifada) e Inter (sans-serif) via Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Inter:wght@400;500;600&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Você pode adicionar estilos globais adicionais aqui, se necessário. */
+
+
+/* Define variáveis CSS e classes para aplicar as novas fontes */
+:root {
+  --font-serifa: 'Lora', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  /* Cores do Design System
+     
+     Cores principais */
+  --cor-primaria: #2563eb; /* blue-600 - CTAs principais */
+  --cor-primaria-hover: #1d4ed8; /* blue-700 */
+  --cor-secundaria: #8c734e; /* terrosa - elementos decorativos */
+  --cor-secundaria-hover: #71593b;
+  
+  /* Cores de fundo */
+  --cor-fundo-claro: #F7F3E8; /* bege claro */
+  --cor-fundo-escuro: #1f2937; /* gray-800 - rodapé */
+  
+  /* Cores de texto */
+  --cor-texto-primaria: #111827; /* gray-900 */
+  --cor-texto-secundaria: #4b5563; /* gray-600 */
+  --cor-texto-clara: #f3f4f6; /* gray-100 */
+  
+  /* Cores de status */
+  --cor-placeholder: #9ca3af; /* gray-400 */
+  --cor-placeholder-hover: #6b7280; /* gray-500 */
+  
+  /* Cores de acento (mantidas para compatibilidade) */
+  --cor-acento: var(--cor-secundaria);
+  --cor-acento-hover: var(--cor-secundaria-hover);
+}
+
+/* Sobrescreve a classe utilitária font-serif para usar Lora */
+.font-serif {
+  font-family: var(--font-serifa);
+}
+
+/* Sobrescreve a classe utilitária font-sans para usar Inter */
+.font-sans {
+  font-family: var(--font-sans);
+}
