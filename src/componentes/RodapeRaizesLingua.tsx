@@ -94,55 +94,61 @@ export default function RodapeRaizesLingua() {
             <h4 className="font-serif text-xl mb-4">Caminhos da Língua</h4>
             <ul className="space-y-2">
               <li>
-                <span
-                  className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]"
-                  role="text"
+                <a
+                  href="/trilhas"
+                  className="link-manuscrito link-bloqueado"
+                  tabIndex={-1}
+                  onClick={(event) => event.preventDefault()}
                   aria-disabled="true"
                   aria-describedby="status-trilhas"
+                  title="Recurso disponível em breve"
                 >
                   Trilhas de leitura
                   <span
                     id="status-trilhas"
-                    className="text-xs uppercase tracking-wide text-[#2F3A10]"
-                    title="Recurso disponível em breve"
+                    className="ml-2 text-xs uppercase tracking-wide text-[#2F3A10]"
                   >
                     em breve
                   </span>
-                </span>
+                </a>
               </li>
               <li>
-                <span
-                  className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]"
-                  role="text"
+                <a
+                  href="/comunidade"
+                  className="link-manuscrito link-bloqueado"
+                  tabIndex={-1}
+                  onClick={(event) => event.preventDefault()}
                   aria-disabled="true"
                   aria-describedby="status-comunidade"
+                  title="Recurso disponível em breve"
                 >
                   Comunidade de revisores
                   <span
                     id="status-comunidade"
-                    className="text-xs uppercase tracking-wide text-[#2F3A10]"
-                    title="Recurso disponível em breve"
+                    className="ml-2 text-xs uppercase tracking-wide text-[#2F3A10]"
                   >
                     em breve
                   </span>
-                </span>
+                </a>
               </li>
               <li>
-                <span
-                  className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]"
-                  role="text"
+                <a
+                  href="/agenda"
+                  className="link-manuscrito link-bloqueado"
+                  tabIndex={-1}
+                  onClick={(event) => event.preventDefault()}
                   aria-disabled="true"
                   aria-describedby="status-agenda"
+                  title="Recurso disponível em breve"
                 >
                   Agenda de temas
                   <span
                     id="status-agenda"
-                    className="text-xs uppercase tracking-wide text-[#2F3A10]"
-                    title="Recurso disponível em breve"
+                    className="ml-2 text-xs uppercase tracking-wide text-[#2F3A10]"
                   >
                     em breve
                   </span>
-                </span>
+                </a>
               </li>
             </ul>
           </div>
