@@ -27,6 +27,19 @@
   width: 100%;
 }
 
+.link-bloqueado {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.72;
+  transition: opacity 0.2s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .link-bloqueado {
+    transition: none;
+  }
+}
+
 /* Respeita preferências de movimento reduzido: desativa a transição do
    sublinhado para usuários que solicitarem menos animações. */
 @media (prefers-reduced-motion: reduce) {
