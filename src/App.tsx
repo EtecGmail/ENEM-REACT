@@ -189,16 +189,14 @@ export default function App() {
                   Perguntas
                 </a>
               </li>
-              <li>
-                <a
-                  href="#cta-final"
-                  className="font-semibold text-blue-600 hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded inline-flex items-center gap-2"
+              <li className="flex items-center">
+                <Botao
+                  isPlaceholder
+                  className="!px-4 !py-2 !rounded-lg !text-sm"
+                  aria-label="Área do aluno em breve"
                 >
                   Área do aluno
-                  <span className="text-xs font-medium uppercase tracking-wide text-gray-500">
-                    em breve
-                  </span>
-                </a>
+                </Botao>
               </li>
             </ul>
           </nav>
@@ -214,27 +212,54 @@ export default function App() {
                     { href: '#planos', rotulo: 'Planos' },
                     { href: '#faq', rotulo: 'Perguntas' },
                     {
-                      href: '#cta-final',
                       rotulo: 'Entrar / Começar',
                       indicador: 'em breve',
+                      desabilitado: true,
                     },
                   ].map((item, index) => (
-                    <li key={item.href}>
-                      <a
-                        href={item.href}
-                        ref={index === 0 ? primeiroLinkMenuRef : undefined}
-                        className="block font-medium hover:text-blue-600 transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-                        onClick={() => definirMenuAberto(false)}
-                      >
-                        <span className="flex items-center gap-2">
-                          {item.rotulo}
-                          {item.indicador ? (
-                            <span className="text-xs uppercase tracking-wide text-gray-500">
-                              {item.indicador}
-                            </span>
-                          ) : null}
-                        </span>
-                      </a>
+                    <li key={item.href ?? item.rotulo}>
+                      {item.desabilitado ? (
+                        <button
+                          type="button"
+                          aria-disabled="true"
+                          className="w-full text-left font-semibold text-gray-500 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded cursor-not-allowed"
+                          onClick={(event) => {
+                            event.preventDefault();
+                            event.stopPropagation();
+                          }}
+                          onKeyDown={(event) => {
+                            if (event.key === 'Enter' || event.key === ' ') {
+                              event.preventDefault();
+                              event.stopPropagation();
+                            }
+                          }}
+                        >
+                          <span className="flex items-center gap-2">
+                            {item.rotulo}
+                            {item.indicador ? (
+                              <span className="text-xs uppercase tracking-wide text-gray-500">
+                                {item.indicador}
+                              </span>
+                            ) : null}
+                          </span>
+                        </button>
+                      ) : (
+                        <a
+                          href={item.href}
+                          ref={index === 0 ? primeiroLinkMenuRef : undefined}
+                          className="block font-medium hover:text-blue-600 transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                          onClick={() => definirMenuAberto(false)}
+                        >
+                          <span className="flex items-center gap-2">
+                            {item.rotulo}
+                            {item.indicador ? (
+                              <span className="text-xs uppercase tracking-wide text-gray-500">
+                                {item.indicador}
+                              </span>
+                            ) : null}
+                          </span>
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
