@@ -24,8 +24,22 @@ export default function RodapeRaizesLingua() {
             <h4 className="font-serif text-xl mb-4">A Plataforma</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/sobre" className="link-manuscrito" aria-disabled="true">
-                  Sobre <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em construção</span>
+                <a
+                  href="/sobre"
+                  className="link-manuscrito link-bloqueado"
+                  tabIndex={-1}
+                  onClick={(event) => event.preventDefault()}
+                  aria-disabled="true"
+                  aria-describedby="status-sobre"
+                  title="Seção disponível em breve"
+                >
+                  Sobre
+                  <span
+                    id="status-sobre"
+                    className="ml-2 text-xs uppercase tracking-wide text-[#2F3A10]"
+                  >
+                    em breve
+                  </span>
                 </a>
               </li>
               <li>
@@ -37,13 +51,41 @@ export default function RodapeRaizesLingua() {
                 </a>
               </li>
               <li>
-                <a href="/cursos" className="link-manuscrito" aria-disabled="true">
-                  Cursos <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em construção</span>
+                <a
+                  href="/cursos"
+                  className="link-manuscrito link-bloqueado"
+                  tabIndex={-1}
+                  onClick={(event) => event.preventDefault()}
+                  aria-disabled="true"
+                  aria-describedby="status-cursos"
+                  title="Seção disponível em breve"
+                >
+                  Cursos
+                  <span
+                    id="status-cursos"
+                    className="ml-2 text-xs uppercase tracking-wide text-[#2F3A10]"
+                  >
+                    em breve
+                  </span>
                 </a>
               </li>
               <li>
-                <a href="/blog" className="link-manuscrito" aria-disabled="true">
-                  Blog <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em construção</span>
+                <a
+                  href="/blog"
+                  className="link-manuscrito link-bloqueado"
+                  tabIndex={-1}
+                  onClick={(event) => event.preventDefault()}
+                  aria-disabled="true"
+                  aria-describedby="status-blog"
+                  title="Seção disponível em breve"
+                >
+                  Blog
+                  <span
+                    id="status-blog"
+                    className="ml-2 text-xs uppercase tracking-wide text-[#2F3A10]"
+                  >
+                    em breve
+                  </span>
                 </a>
               </li>
             </ul>
@@ -59,7 +101,13 @@ export default function RodapeRaizesLingua() {
                   aria-describedby="status-trilhas"
                 >
                   Trilhas de leitura
-                  <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em breve</span>
+                  <span
+                    id="status-trilhas"
+                    className="text-xs uppercase tracking-wide text-[#2F3A10]"
+                    title="Recurso disponível em breve"
+                  >
+                    em breve
+                  </span>
                 </span>
               </li>
               <li>
@@ -70,7 +118,13 @@ export default function RodapeRaizesLingua() {
                   aria-describedby="status-comunidade"
                 >
                   Comunidade de revisores
-                  <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em breve</span>
+                  <span
+                    id="status-comunidade"
+                    className="text-xs uppercase tracking-wide text-[#2F3A10]"
+                    title="Recurso disponível em breve"
+                  >
+                    em breve
+                  </span>
                 </span>
               </li>
               <li>
@@ -81,7 +135,13 @@ export default function RodapeRaizesLingua() {
                   aria-describedby="status-agenda"
                 >
                   Agenda de temas
-                  <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em breve</span>
+                  <span
+                    id="status-agenda"
+                    className="text-xs uppercase tracking-wide text-[#2F3A10]"
+                    title="Recurso disponível em breve"
+                  >
+                    em breve
+                  </span>
                 </span>
               </li>
             </ul>
@@ -167,9 +227,16 @@ export default function RodapeRaizesLingua() {
               role="link"
               aria-disabled="true"
               aria-describedby="status-privacidade"
+              title="Documento disponível em breve"
             >
               Política de Privacidade
-              <span className="ml-2 text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em finalização</span>
+              <span
+                id="status-privacidade"
+                className="ml-2 text-xs uppercase tracking-wide text-[#2F3A10]"
+                title="Documento disponível em breve"
+              >
+                em breve
+              </span>
             </a>
             <a
               href="/termos"
@@ -179,9 +246,16 @@ export default function RodapeRaizesLingua() {
               role="link"
               aria-disabled="true"
               aria-describedby="status-termos"
+              title="Documento disponível em breve"
             >
               Termos de Uso
-              <span className="ml-2 text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em finalização</span>
+              <span
+                id="status-termos"
+                className="ml-2 text-xs uppercase tracking-wide text-[#2F3A10]"
+                title="Documento disponível em breve"
+              >
+                em breve
+              </span>
             </a>
           </div>
           <p>
