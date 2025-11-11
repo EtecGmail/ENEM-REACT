@@ -49,19 +49,34 @@ export default function RodapeRaizesLingua() {
             <h4 className="font-serif text-xl mb-4">Caminhos da Língua</h4>
             <ul className="space-y-2">
               <li>
-                <span className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]">
+                <span
+                  className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]"
+                  role="text"
+                  aria-disabled="true"
+                  aria-describedby="status-trilhas"
+                >
                   Trilhas de leitura
                   <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em breve</span>
                 </span>
               </li>
               <li>
-                <span className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]">
+                <span
+                  className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]"
+                  role="text"
+                  aria-disabled="true"
+                  aria-describedby="status-comunidade"
+                >
                   Comunidade de revisores
                   <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em breve</span>
                 </span>
               </li>
               <li>
-                <span className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]">
+                <span
+                  className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]"
+                  role="text"
+                  aria-disabled="true"
+                  aria-describedby="status-agenda"
+                >
                   Agenda de temas
                   <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em breve</span>
                 </span>
@@ -141,11 +156,27 @@ export default function RodapeRaizesLingua() {
         {/* Faixa legal */}
         <div className="mt-8 pt-4 border-t border-[#6B8E23] text-sm flex flex-col lg:flex-row justify-between items-center">
           <div className="flex space-x-4 mb-2 lg:mb-0">
-            <a href="/privacidade" className="link-manuscrito" aria-disabled="true">
+            <a
+              href="/privacidade"
+              className="link-manuscrito link-bloqueado"
+              tabIndex={-1}
+              onClick={(event) => event.preventDefault()}
+              role="link"
+              aria-disabled="true"
+              aria-describedby="status-privacidade"
+            >
               Política de Privacidade
               <span className="ml-2 text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em finalização</span>
             </a>
-            <a href="/termos" className="link-manuscrito" aria-disabled="true">
+            <a
+              href="/termos"
+              className="link-manuscrito link-bloqueado"
+              tabIndex={-1}
+              onClick={(event) => event.preventDefault()}
+              role="link"
+              aria-disabled="true"
+              aria-describedby="status-termos"
+            >
               Termos de Uso
               <span className="ml-2 text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em finalização</span>
             </a>
