@@ -24,79 +24,23 @@ export default function RodapeRaizesLingua() {
             <h4 className="font-serif text-xl mb-4">A Plataforma</h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="/sobre"
-                  className="link-manuscrito link-bloqueado"
-                  tabIndex={-1}
-                  onClick={(event) => event.preventDefault()}
-                  role="link"
-                  aria-disabled="true"
-                  aria-describedby="status-sobre"
-                >
-                  Sobre
-                  <span
-                    id="status-sobre"
-                    className="ml-2 text-xs uppercase tracking-wide text-[#8c734e]"
-                  >
-                    em construção — recurso indisponível
-                  </span>
+                <a href="/sobre" className="link-manuscrito" aria-disabled="true">
+                  Sobre <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em construção</span>
                 </a>
               </li>
               <li>
-                <a
-                  href="/faq"
-                  className="link-manuscrito link-bloqueado"
-                  tabIndex={-1}
-                  onClick={(event) => event.preventDefault()}
-                  role="link"
-                  aria-disabled="true"
-                  aria-describedby="status-faq"
-                >
-                  FAQ
-                  <span
-                    id="status-faq"
-                    className="ml-2 text-xs uppercase tracking-wide text-[#8c734e]"
-                  >
-                    em construção — recurso indisponível
-                  </span>
+                <a href="/faq" className="link-manuscrito" aria-disabled="true">
+                  FAQ <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em construção</span>
                 </a>
               </li>
               <li>
-                <a
-                  href="/cursos"
-                  className="link-manuscrito link-bloqueado"
-                  tabIndex={-1}
-                  onClick={(event) => event.preventDefault()}
-                  role="link"
-                  aria-disabled="true"
-                  aria-describedby="status-cursos"
-                >
-                  Cursos
-                  <span
-                    id="status-cursos"
-                    className="ml-2 text-xs uppercase tracking-wide text-[#8c734e]"
-                  >
-                    em construção — recurso indisponível
-                  </span>
+                <a href="/cursos" className="link-manuscrito" aria-disabled="true">
+                  Cursos <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em construção</span>
                 </a>
               </li>
               <li>
-                <a
-                  href="/blog"
-                  className="link-manuscrito link-bloqueado"
-                  tabIndex={-1}
-                  onClick={(event) => event.preventDefault()}
-                  role="link"
-                  aria-disabled="true"
-                  aria-describedby="status-blog"
-                >
-                  Blog
-                  <span
-                    id="status-blog"
-                    className="ml-2 text-xs uppercase tracking-wide text-[#8c734e]"
-                  >
-                    em construção — recurso indisponível
-                  </span>
+                <a href="/blog" className="link-manuscrito" aria-disabled="true">
+                  Blog <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em construção</span>
                 </a>
               </li>
             </ul>
@@ -112,12 +56,7 @@ export default function RodapeRaizesLingua() {
                   aria-describedby="status-trilhas"
                 >
                   Trilhas de leitura
-                  <span
-                    id="status-trilhas"
-                    className="text-xs uppercase tracking-wide text-[#8c734e]"
-                  >
-                    em breve — recurso em preparação
-                  </span>
+                  <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em breve</span>
                 </span>
               </li>
               <li>
@@ -128,12 +67,7 @@ export default function RodapeRaizesLingua() {
                   aria-describedby="status-comunidade"
                 >
                   Comunidade de revisores
-                  <span
-                    id="status-comunidade"
-                    className="text-xs uppercase tracking-wide text-[#8c734e]"
-                  >
-                    em breve — recurso em preparação
-                  </span>
+                  <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em breve</span>
                 </span>
               </li>
               <li>
@@ -144,12 +78,7 @@ export default function RodapeRaizesLingua() {
                   aria-describedby="status-agenda"
                 >
                   Agenda de temas
-                  <span
-                    id="status-agenda"
-                    className="text-xs uppercase tracking-wide text-[#8c734e]"
-                  >
-                    em breve — recurso em preparação
-                  </span>
+                  <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em breve</span>
                 </span>
               </li>
             </ul>
@@ -237,12 +166,7 @@ export default function RodapeRaizesLingua() {
               aria-describedby="status-privacidade"
             >
               Política de Privacidade
-              <span
-                id="status-privacidade"
-                className="ml-2 text-xs uppercase tracking-wide text-[#8c734e]"
-              >
-                em finalização — recurso indisponível
-              </span>
+              <span className="ml-2 text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em finalização</span>
             </a>
             <a
               href="/termos"
@@ -254,12 +178,7 @@ export default function RodapeRaizesLingua() {
               aria-describedby="status-termos"
             >
               Termos de Uso
-              <span
-                id="status-termos"
-                className="ml-2 text-xs uppercase tracking-wide text-[#8c734e]"
-              >
-                em finalização — recurso indisponível
-              </span>
+              <span className="ml-2 text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em finalização</span>
             </a>
           </div>
           <p>

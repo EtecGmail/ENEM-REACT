@@ -21,6 +21,7 @@
   --cor-primaria-hover: #1d4ed8; /* blue-700 */
   --cor-secundaria: #8c734e; /* terrosa - elementos decorativos */
   --cor-secundaria-hover: #71593b;
+  --cor-secundaria-contraste: #5b4423; /* microtextos escuros (contraste ≥4.5:1 sobre --cor-fundo-claro) */
   
   /* Cores de fundo */
   --cor-fundo-claro: #F7F3E8; /* bege claro */

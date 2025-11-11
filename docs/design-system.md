@@ -10,6 +10,9 @@
   - `placeholder`: Estado de "em breve" (cinza desabilitado)
 - **Tamanhos**: `md` (padrão), `lg`
 - **Largura**: `cheio`, `conteudo` (padrão)
+- **Placeholders**:
+  - Quando `isPlaceholder` está ativo, o botão força `disabled`, ignora handlers de mouse/teclado (incluindo `onClick`/`onKeyDown`) e mantém `type="button"` para evitar submits acidentais.
+  - A variante `placeholder` garante `cursor-not-allowed` e remove efeitos de hover/foco via atributos `disabled`.
 
 ### Seções (`src/layout/Secao.tsx`)
 
@@ -32,6 +35,7 @@ Os valores abaixo estão definidos em `src/index.css` como variáveis CSS e são
 | `--cor-primaria-hover` | `#1d4ed8` | Hover em CTAs ativos |
 | `--cor-secundaria` | `#8c734e` | Detalhes terrosos, badges de plano, elementos do rodapé |
 | `--cor-secundaria-hover` | `#71593b` | Hover em elementos secundários |
+| `--cor-secundaria-contraste` | `#5b4423` | Microtextos em caixa alta sobre `--cor-fundo-claro` (contraste ≥4.5:1) |
 | `--cor-fundo-claro` | `#F7F3E8` | Textura do rodapé e áreas terrosas |
 | `--cor-fundo-escuro` | `#1f2937` | Texto invertido e planos futuros com fundo escuro |
 | `--cor-texto-primaria` | `#111827` | Títulos e copy principal |
@@ -40,6 +44,8 @@ Os valores abaixo estão definidos em `src/index.css` como variáveis CSS e são
 | `--cor-placeholder` | `#9ca3af` | Estados “em breve”, botões sem fluxo ativo |
 | `--cor-placeholder-hover` | `#6b7280` | Referência futura para interação em placeholders |
 | `--cor-acento` | `#8c734e` | Mantido para compatibilidade e uso manual |
+
+> **Nota de acessibilidade:** microtextos “em construção/em breve” do rodapé foram migrados para `--cor-secundaria-contraste` para garantir contraste AA mínimo sobre `--cor-fundo-claro` sem alterar a tipografia em caixa alta existente.
 
 ### Combinações sob observação
 
