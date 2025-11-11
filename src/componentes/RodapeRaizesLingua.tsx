@@ -25,22 +25,22 @@ export default function RodapeRaizesLingua() {
             <ul className="space-y-2">
               <li>
                 <a href="/sobre" className="link-manuscrito" aria-disabled="true">
-                  Sobre <span className="text-xs uppercase tracking-wide text-[#8c734e]">em construção</span>
+                  Sobre <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em construção</span>
                 </a>
               </li>
               <li>
                 <a href="/faq" className="link-manuscrito" aria-disabled="true">
-                  FAQ <span className="text-xs uppercase tracking-wide text-[#8c734e]">em construção</span>
+                  FAQ <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em construção</span>
                 </a>
               </li>
               <li>
                 <a href="/cursos" className="link-manuscrito" aria-disabled="true">
-                  Cursos <span className="text-xs uppercase tracking-wide text-[#8c734e]">em construção</span>
+                  Cursos <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em construção</span>
                 </a>
               </li>
               <li>
                 <a href="/blog" className="link-manuscrito" aria-disabled="true">
-                  Blog <span className="text-xs uppercase tracking-wide text-[#8c734e]">em construção</span>
+                  Blog <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em construção</span>
                 </a>
               </li>
             </ul>
@@ -51,19 +51,19 @@ export default function RodapeRaizesLingua() {
               <li>
                 <span className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]">
                   Trilhas de leitura
-                  <span className="text-xs uppercase tracking-wide text-[#8c734e]">em breve</span>
+                  <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em breve</span>
                 </span>
               </li>
               <li>
                 <span className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]">
                   Comunidade de revisores
-                  <span className="text-xs uppercase tracking-wide text-[#8c734e]">em breve</span>
+                  <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em breve</span>
                 </span>
               </li>
               <li>
                 <span className="link-manuscrito inline-flex items-baseline gap-2 text-[#4A4A4A]">
                   Agenda de temas
-                  <span className="text-xs uppercase tracking-wide text-[#8c734e]">em breve</span>
+                  <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em breve</span>
                 </span>
               </li>
             </ul>
@@ -143,11 +143,11 @@ export default function RodapeRaizesLingua() {
           <div className="flex space-x-4 mb-2 lg:mb-0">
             <a href="/privacidade" className="link-manuscrito" aria-disabled="true">
               Política de Privacidade
-              <span className="ml-2 text-xs uppercase tracking-wide text-[#8c734e]">em finalização</span>
+              <span className="ml-2 text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em finalização</span>
             </a>
             <a href="/termos" className="link-manuscrito" aria-disabled="true">
               Termos de Uso
-              <span className="ml-2 text-xs uppercase tracking-wide text-[#8c734e]">em finalização</span>
+              <span className="ml-2 text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em finalização</span>
             </a>
           </div>
           <p>
