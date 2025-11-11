@@ -5,7 +5,6 @@ import CartaoEtapa from './componentes/CartaoEtapa';
 import CartaoPlano from './componentes/CartaoPlano';
 import PerguntaFrequente from './componentes/PerguntaFrequente';
 import RodapeRaizesLingua from './componentes/RodapeRaizesLingua';
-import { MaskedButton } from './lib/masked-button-component/src';
 
 export default function App() {
   const [menuAberto, definirMenuAberto] = useState(false);
@@ -191,7 +190,15 @@ export default function App() {
                 </a>
               </li>
               <li>
-                <MaskedButton />
+                <a
+                  href="#cta-final"
+                  className="font-semibold text-blue-600 hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded inline-flex items-center gap-2"
+                >
+                  Área do aluno
+                  <span className="text-xs font-medium uppercase tracking-wide text-gray-500">
+                    em breve
+                  </span>
+                </a>
               </li>
             </ul>
           </nav>
@@ -206,6 +213,11 @@ export default function App() {
                     { href: '#como-funciona', rotulo: 'Como funciona' },
                     { href: '#planos', rotulo: 'Planos' },
                     { href: '#faq', rotulo: 'Perguntas' },
+                    {
+                      href: '#cta-final',
+                      rotulo: 'Entrar / Começar',
+                      indicador: 'em breve',
+                    },
                   ].map((item, index) => (
                     <li key={item.href}>
                       <a
@@ -225,12 +237,6 @@ export default function App() {
                       </a>
                     </li>
                   ))}
-                  <li>
-                    <MaskedButton
-                      layout="block"
-                      onClick={() => definirMenuAberto(false)}
-                    />
-                  </li>
                 </ul>
               </nav>
             </div>
