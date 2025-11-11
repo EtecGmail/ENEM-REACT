@@ -29,8 +29,11 @@ export default function RodapeRaizesLingua() {
                 </a>
               </li>
               <li>
-                <a href="/faq" className="link-manuscrito" aria-disabled="true">
-                  FAQ <span className="text-xs uppercase tracking-wide text-[color:var(--cor-secundaria-contraste)]">em construção</span>
+                <a
+                  href="#faq"
+                  className="link-manuscrito transition-colors duration-200 hover:text-[var(--cor-acento)] focus-visible:text-[var(--cor-acento)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[color:var(--cor-acento)]"
+                >
+                  FAQ
                 </a>
               </li>
               <li>
