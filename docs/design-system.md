@@ -10,6 +10,9 @@
   - `placeholder`: Estado de "em breve" (cinza desabilitado)
 - **Tamanhos**: `md` (padrão), `lg`
 - **Largura**: `cheio`, `conteudo` (padrão)
+- **Placeholders**:
+  - Quando `isPlaceholder` está ativo, o botão força `disabled`, ignora handlers de mouse/teclado (incluindo `onClick`/`onKeyDown`) e mantém `type="button"` para evitar submits acidentais.
+  - A variante `placeholder` garante `cursor-not-allowed` e remove efeitos de hover/foco via atributos `disabled`.
 
 ### Seções (`src/layout/Secao.tsx`)
 
