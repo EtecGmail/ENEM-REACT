@@ -5,6 +5,7 @@ import CartaoEtapa from './componentes/CartaoEtapa';
 import CartaoPlano from './componentes/CartaoPlano';
 import PerguntaFrequente from './componentes/PerguntaFrequente';
 import RodapeRaizesLingua from './componentes/RodapeRaizesLingua';
+import { MaskedButton } from './lib/masked-button-component/src';
 
 export default function App() {
   const [menuAberto, definirMenuAberto] = useState(false);
@@ -189,16 +190,11 @@ export default function App() {
                   Perguntas
                 </a>
               </li>
-              <li>
-                <a
-                  href="#cta-final"
-                  className="font-semibold text-blue-600 hover:text-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 rounded inline-flex items-center gap-2"
-                >
-                  Área do aluno
-                  <span className="text-xs font-medium uppercase tracking-wide text-gray-500">
-                    em breve
-                  </span>
-                </a>
+              <li className="flex items-center">
+                <MaskedButton
+                  aria-label="Área do aluno, recurso em breve"
+                  className="shadow-none"
+                />
               </li>
             </ul>
           </nav>
@@ -213,28 +209,35 @@ export default function App() {
                     { href: '#como-funciona', rotulo: 'Como funciona' },
                     { href: '#planos', rotulo: 'Planos' },
                     { href: '#faq', rotulo: 'Perguntas' },
-                    {
-                      href: '#cta-final',
-                      rotulo: 'Entrar / Começar',
-                      indicador: 'em breve',
-                    },
+                    { href: '#cta-final', rotulo: 'Entrar / Começar', indicador: 'em breve' },
                   ].map((item, index) => (
                     <li key={item.href}>
-                      <a
-                        href={item.href}
-                        ref={index === 0 ? primeiroLinkMenuRef : undefined}
-                        className="block font-medium hover:text-blue-600 transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-                        onClick={() => definirMenuAberto(false)}
-                      >
-                        <span className="flex items-center gap-2">
-                          {item.rotulo}
-                          {item.indicador ? (
-                            <span className="text-xs uppercase tracking-wide text-gray-500">
-                              {item.indicador}
-                            </span>
-                          ) : null}
-                        </span>
-                      </a>
+                      {item.indicador ? (
+                        <MaskedButton
+                          href={item.href}
+                          aria-label={`${item.rotulo}, ${item.indicador}`}
+                          className="w-full"
+                          label={item.rotulo}
+                          statusLabel={item.indicador}
+                          onClick={() => definirMenuAberto(false)}
+                        />
+                      ) : (
+                        <a
+                          href={item.href}
+                          ref={index === 0 ? primeiroLinkMenuRef : undefined}
+                          className="block font-medium hover:text-blue-600 transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                          onClick={() => definirMenuAberto(false)}
+                        >
+                          <span className="flex items-center gap-2">
+                            {item.rotulo}
+                            {item.indicador ? (
+                              <span className="text-xs uppercase tracking-wide text-gray-500">
+                                {item.indicador}
+                              </span>
+                            ) : null}
+                          </span>
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>
