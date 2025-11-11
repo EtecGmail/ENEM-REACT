@@ -1,5 +1,5 @@
 import { cva, type VariantProps } from 'class-variance-authority';
-import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import type { ButtonHTMLAttributes, ReactNode, SyntheticEvent } from 'react';
 
 // Variantes do botão definidas via cva para reutilização
 const estilosBotao = cva(
@@ -12,7 +12,7 @@ const estilosBotao = cva(
         neutro:
           'bg-gray-100 text-gray-900 hover:bg-gray-200 focus-visible:ring-blue-500',
         placeholder:
-          'bg-gray-200 text-gray-600 cursor-not-allowed shadow-none focus-visible:ring-gray-400 focus-visible:ring-offset-white',
+          'bg-gray-200 text-gray-600 cursor-not-allowed shadow-none focus-visible:ring-gray-400 focus-visible:ring-offset-white disabled:hover:bg-gray-200 disabled:hover:text-gray-600 disabled:focus-visible:ring-0 disabled:pointer-events-none',
       },
       tamanho: {
         md: 'text-base',
@@ -59,6 +59,7 @@ export default function Botao({
   title,
   ...props
 }: BotaoProps) {
+  const isBloqueado = isPlaceholder;
   const resolvedVariant = isPlaceholder ? 'placeholder' : variante;
   const classes = [
     estilosBotao({
@@ -74,18 +75,53 @@ export default function Botao({
 
   const indicadorPlaceholder = isPlaceholder ? placeholderText ?? 'em breve' : null;
 
+  const sanitizedProps = (() => {
+    if (!isBloqueado) {
+      return props;
+    }
+
+    const preventDefaultHandler = (event: SyntheticEvent) => {
+      event.preventDefault();
+    };
+
+    const clonedProps = { ...props } as typeof props;
+
+    Object.keys(clonedProps).forEach((key) => {
+      if (
+        key === 'onClick' ||
+        key === 'onKeyDown' ||
+        key === 'onKeyUp' ||
+        key === 'onKeyPress' ||
+        key === 'onDoubleClick' ||
+        key === 'onContextMenu' ||
+        key.startsWith('onMouse') ||
+        key.startsWith('onPointer')
+      ) {
+        clonedProps[key as keyof typeof clonedProps] =
+          preventDefaultHandler as (typeof clonedProps)[keyof typeof clonedProps];
+      }
+    });
+
+    if ('type' in clonedProps) {
+      delete clonedProps.type;
+    }
+
+    return clonedProps;
+  })();
+
   return (
     <button
-      type={type}
+      type={isBloqueado ? 'button' : type}
       className={classes}
       data-placeholder={isPlaceholder ? 'true' : undefined}
-      aria-disabled={isPlaceholder || undefined}
+      aria-disabled={isBloqueado || undefined}
+      disabled={isBloqueado}
       title={
         isPlaceholder && indicadorPlaceholder
           ? `Fluxo indisponível: ${indicadorPlaceholder}`
           : title
       }
-      {...props}
+      {...sanitizedProps}
     >
       <span className="flex flex-col items-center gap-1 leading-none">
         <span className="flex items-center gap-2">{children}</span>
