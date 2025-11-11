@@ -1,0 +1,3 @@
+[submodule "src/lib/masked-button-component"]
+	path = src/lib/masked-button-component
+	url = https://github.com/EtecGmail/masked-button-component.git
